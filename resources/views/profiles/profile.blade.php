@@ -5,9 +5,9 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p class="text-center">
+                    <b><p class="text-center">
                         {{$user->name}}'s Profile.
-                    </p>
+                    </p></b>
                 </div>
                 <div class="panle-body">
                     <center>
