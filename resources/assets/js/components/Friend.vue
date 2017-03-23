@@ -1,13 +1,25 @@
 <template>
     <div>
         <p class="text-center" v-if="loading">
-            Loading...
+            <div v-if="loading">Loading...</div>
         </p>
         <p class="text-center" v-if="!loading">
-            <button class="btn btn-success" v-if="status == 0" @click="add_friend">Add Friend</button>
+            <div><button class="btn btn-success" v-if="status == 0" @click="add_friend">Add Friend</button></div>
+
+            <div>
             <button class="btn btn-success" v-if="status == 'pending'" @click="accept_friend">Accept Friend</button>
+            </div>
+
+            <div>
             <span class="text-success" v-if="status == 'waiting'">Waiting for response</span>
-            <span class="text-success" v-if="status == 'friends'">Friends</span>
+            </div>
+            
+            <div v-if="status == 'friends'">
+                <span class="text-success">Friends</span><br>
+                <button class="btn btn-success">Send me a message</button>
+            </div>    
+        
+            
         </p>
     </div>
 </template>

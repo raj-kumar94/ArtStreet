@@ -131,12 +131,18 @@ Route::group(['middleware'=>'auth'], function(){
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/profile/{slug}',[
         'uses' => 'ProfileController@index',
         'as' => 'profile',
+    ]);
+
+    Route::get('/profile1/{slug}',[
+        'uses' => 'ProfileController@index1',
+        'as' => 'profile1',
     ]);
 
     Route::get('/profile/edit/me',[

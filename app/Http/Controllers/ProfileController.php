@@ -15,6 +15,12 @@ class ProfileController extends Controller
         return view('profiles.profile')->with('user',$user);
     }
 
+    public function index1($slug)
+    {
+        $user = User::where('slug',$slug)->first();
+        return view('profiles.profile1')->with('user',$user);
+    }
+
     public function edit()
     {
         return view('profiles.edit')->with('userProfile', Auth::user()->profile);
