@@ -155,3 +155,8 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'profile.update',
     ]);
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

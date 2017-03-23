@@ -180,6 +180,7 @@ return [
         //messenger plugin
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         DevDojo\Chatter\ChatterServiceProvider::class,
+        TCG\Voyager\VoyagerServiceProvider::class,
 
 
     ],
