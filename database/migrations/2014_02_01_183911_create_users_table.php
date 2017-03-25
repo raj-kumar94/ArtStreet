@@ -10,6 +10,7 @@ class CreateUsersTable extends Migration
      * Run the migrations.
      *
      * @return void
+	 added nullable to gender and slug
      */
     public function up()
     {
@@ -17,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
 			$table->string('name');
             $table->string('email');
-			$table->boolean('gender');
+			$table->boolean('gender')->nullable();
 			$table->string('avatar');
-			$table->string('slug');
+			$table->string('slug')->nullable();
             $table->integer('role_id')->nullable()->after('id');
             $table->string('password');
 			$table->timestamps();

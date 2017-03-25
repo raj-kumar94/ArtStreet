@@ -31,18 +31,19 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{$user->created_at}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{$user->created_at->diffForHumans()}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>{{$user->name}}</li>
-              <li class="list-group-item text-right"><span class="pull-left"><strong class="">Location: </strong></span> {{$user->profile->location}}
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">DOB</strong></span>{{$user->profile->DOB}}</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong class="">Location </strong></span> {{$user->profile->location}}
                
               </li>
             </ul>
            <div class="panel panel-default">
-             <div class="panel-heading">Insured / Bonded?
+             <div class="panel-heading">Art Lover?
 
                 </div>
-                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and bonded.
+                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am an Art lover.
 
                 </div>
             </div>
@@ -50,7 +51,7 @@
                 <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
 
                 </div>
-                <div class="panel-body"><a href="http://bootply.com" class="">bootply.com</a>
+                <div class="panel-body"><a href="http://artstreet.com" class="">ArtStreet.com</a>
 
                 </div>
             </div>
@@ -84,7 +85,7 @@
                 </div>
             </div>
             <div class="panel panel-default target">
-                <div class="panel-heading" contenteditable="false">Pets I Own</div>
+                <div class="panel-heading" contenteditable="false">My Creations</div>
                 <div class="panel-body">
                   <div class="row">
 				<div class="col-md-4">
@@ -156,10 +157,10 @@
             <div class="row-fluid">
                 <div class="span3">
                     <p> 
-                        <a href="http://twitter.com/Bootply" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-                        <a href="https://plus.google.com/+Bootply" rel="publisher">Google+</a><br>
-                        <a href="http://facebook.com/Bootply" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-                        <a href="https://github.com/iatek/bootply" title="Bootply on GitHub" target="ext">GitHub</a><br>
+                        <a href="#" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
+                        <a href="#" rel="publisher">Google+</a><br>
+                        <a href="#" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
+                        <a href="#" title="Bootply on GitHub" target="ext">GitHub</a><br>
                     </p>
                 </div>
                 
