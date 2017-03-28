@@ -9,25 +9,24 @@ class CreatePostsTable extends Migration
      * Run the migrations.
      *
      * @return void
-	 added nullable to author_id, excerpt, seo_title, meta_description, meta_keywords and body
      */
     public function up()
     {
         // Create table for storing roles
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('author_id')->nullable();
+            $table->integer('author_id');
 			$table->integer('user_id');
             $table->integer('category_id')->nullable();
             $table->string('title');
             $table->string('seo_title')->nullable();
-            $table->text('excerpt')->nullable();
+            $table->text('excerpt');
 			$table->text('content');
-            $table->text('body')->nullable();
+            $table->text('body');
             $table->string('image')->nullable();
             $table->string('slug')->unique();
-            $table->text('meta_description')->nullable();
-            $table->text('meta_keywords')->nullable();
+            $table->text('meta_description');
+            $table->text('meta_keywords');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
             $table->timestamps();

@@ -23,7 +23,7 @@
 
                             <div class="form-group">
                                 <label for="dob">Date of birth</label>
-                                <input type="date" class="form-control" name="dob" value="{{$userProfile->DOB}}">
+                                <input type="date" class="form-control" name="dob" value="{{$userProfile->dob}}">
                             </div>
 
                             <div class="form-group">
