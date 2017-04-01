@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
 			$table->boolean('gender');
 			$table->string('avatar');
 			$table->string('slug');
-            $table->integer('role_id')->nullable()->after('id');
+            $table->integer('role_id');
             $table->string('password');
 			$table->timestamps();
             $table->rememberToken();

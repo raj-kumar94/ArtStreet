@@ -34,8 +34,7 @@
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{$user->created_at}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>{{$user->name}}</li>
-              <li class="list-group-item text-right"><span class="pull-left"><strong class="">Location: </strong></span> {{$user->profile->location}}
-               
+              <li class="list-group-item text-right"><span class="pull-left"><strong class="">Location: </strong></span> {{$user->profile->location}} 
               </li>
             </ul>
            <div class="panel panel-default">

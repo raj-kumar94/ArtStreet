@@ -10,9 +10,26 @@ class PostsController extends Controller
 {
     public function store(Request $request)
     {
-        return Post::create([
-            'user_id' => Auth::id(),
-            'content' => $request['content']
-        ]);
+
+		$dirName = Auth::user()->slug;    	
+        if($request->hasFile('photo'))
+        {
+            Post::create([
+            	'user_id' => Auth::id(),
+            	'content' => $request['content'],
+              	'image' => $request->photo->store('public/posts/'.$dirName.'')
+            ]);
+
+            return redirect()->back();
+        }
+
+        else{
+        	Post::create([
+            	'user_id' => Auth::id(),
+            	'content' => $request['content']
+            ]);
+
+            return redirect()->back();
+        }
     }
 }

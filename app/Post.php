@@ -1,15 +1,16 @@
 <?php
 
 namespace App;
+use Storage;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //we want post to be eagerly loaded with user
+    //we want post to be eagerly loaded with user and likes
     public $with = ['user','likes'];
 
-    protected $fillable = ['content','user_id'];
+    protected $fillable = ['content','user_id','image'];
 
     public function user()
     {
@@ -21,4 +22,11 @@ class Post extends Model
         return $this->hasMany('App\Like');
     }
 
+    //pass the field as argument for the accessor
+    public function getImageAttribute($image)
+    {
+        //getting full path to post image, make sure to import Storage facade too
+        return asset(Storage::url($image));
+    }
+   
 }

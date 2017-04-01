@@ -140,10 +140,10 @@ Route::group(['middleware'=>'auth'], function(){
         'as' => 'profile',
     ]);
 
-    Route::get('/profile1/{slug}',[
-        'uses' => 'ProfileController@index1',
-        'as' => 'profile1',
-    ]);
+    // Route::get('/profile1/{slug}',[
+    //     'uses' => 'ProfileController@index1',
+    //     'as' => 'profile1',
+    // ]);
 
     Route::get('/profile/edit/me',[
         'uses' => 'ProfileController@edit',

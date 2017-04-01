@@ -12,10 +12,13 @@
                         </div>
 
                         <div class="panel-body">
+
                             <p class="text-center">
                                 {{ post.content }}
                             </p>
-
+                            <br>
+                        <img :src="post.image" alt=""  class="avatar-feed">
+                        <br>
                             <like :id="post.id"></like>
                         </div>
                     </div>

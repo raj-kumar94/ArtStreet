@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel-bodyz">
                         <textarea rows="3" class="form-control" v-model="content"></textarea>
                         <br>
                             <button class="btn btn-success pull-right" :disabled="not_working" @click="create_post()">
