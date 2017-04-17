@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //we want post to be eagerly loaded with user and likes
-    public $with = ['user','likes'];
+    public $with = ['user','likes','comments'];
 
     protected $fillable = ['content','user_id','image'];
 
@@ -27,6 +27,11 @@ class Post extends Model
     {
         //getting full path to post image, make sure to import Storage facade too
         return asset(Storage::url($image));
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
    
 }

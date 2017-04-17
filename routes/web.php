@@ -122,6 +122,18 @@ Route::group(['middleware'=>'auth'], function(){
 
 });
 
+/////////////comments
+
+Route::group(['middleware'=>'auth'], function(){
+
+    Route::get('/getcomment', [
+            'uses' => 'CommentsController@getcomment',
+            'as' => 'getcomment'
+        ]
+    );
+
+});
+
 
 
 

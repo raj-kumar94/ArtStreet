@@ -21,6 +21,8 @@
                         <br>
                             <like :id="post.id"></like>
                         </div>
+                        <textarea name="" id="" cols="50" rows="3"></textarea>
+                        <button class="btn btn-success" style="margin-bottom:30px">Comment</button>
                     </div>
                 </div>
             </div>
@@ -42,6 +44,7 @@
         get_feed() {
         this.$http.get('/feed')
         .then( (response) => {
+            console.log(response.body)
         response.body.forEach( (post) => {
         this.$store.commit('add_post', post)
     })

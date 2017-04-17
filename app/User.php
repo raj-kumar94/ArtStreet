@@ -47,4 +47,6 @@ class User extends Authenticatable
         //getting full path to user's avatar
         return asset(Storage::url($avatar));
     }
+
+    
 }
