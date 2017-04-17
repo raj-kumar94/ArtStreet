@@ -25,10 +25,15 @@ class FeedsController extends Controller
                 array_push($feed, $mypost);
         endforeach;
 
+        usort($feed, function($pos1, $post2){
+            return $pos1->id < $post2->id;
+        });
+
         return $feed;
     }
 
     public function photos(){
-        return Post::select('image')->get();
+        $photos = Post::select('image')->get();
+        return view('photos', compact('photos'));
     }
 }
