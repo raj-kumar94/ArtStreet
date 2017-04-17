@@ -102,6 +102,12 @@ Route::group(['middleware'=>'auth'], function(){
         ]
     );
 
+    Route::get('/photos', [
+            'uses' => 'FeedsController@photos',
+            'as' => 'photos'
+        ]
+    );
+
     Route::get('/get_auth_user_data',function(){
         return Auth::user();
     }
@@ -118,6 +124,7 @@ Route::group(['middleware'=>'auth'], function(){
             'as' => 'unlike'
         ]
     );
+
 
 
 });

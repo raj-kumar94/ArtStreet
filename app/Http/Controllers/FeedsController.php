@@ -20,6 +20,15 @@ class FeedsController extends Controller
             endforeach;
         endforeach;
 
+        $myid = Auth::user();
+        foreach($myid->posts as $mypost):
+                array_push($feed, $mypost);
+        endforeach;
+
         return $feed;
+    }
+
+    public function photos(){
+        return Post::select('image')->get();
     }
 }

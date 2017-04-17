@@ -17,7 +17,7 @@
                                 {{ post.content }}
                             </p>
                             <br>
-                        <img :src="post.image" alt=""  class="avatar-feed">
+                        <img :src="post.image" alt=""  class="img-thumbnail">
                         <br>
                             <like :id="post.id"></like>
                         </div>

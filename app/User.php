@@ -45,6 +45,7 @@ class User extends Authenticatable
     public function getAvatarAttribute($avatar)
     {
         //getting full path to user's avatar
+        //use it as $user->avatar to get its full path
         return asset(Storage::url($avatar));
     }
 

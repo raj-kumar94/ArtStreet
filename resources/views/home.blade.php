@@ -7,7 +7,7 @@
 
 	        <div class="col-sm-2">
 	          <ul id="sidebar" class="nav nav-stacked affix">
-	            <li><a href="#">home.blade.php</a></li>
+	            <li><a href="{{route('photos')}}">home.blade.php</a></li>
 	            <li><a href="#">Link 2</a></li>
 	            <li><a href="#">Link 3</a></li>
 	            <li><a href="#">Link 4</a></li>
