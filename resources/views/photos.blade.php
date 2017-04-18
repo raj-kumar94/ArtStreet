@@ -1,16 +1,19 @@
 @extends('layouts.app')
 <br><br><br><br>
 <div class="container">
-    <div class="row">
-    @foreach($photos as $photo)
-        @if ($loop->index %3!=0)
-        <img src="{{$photo->image}}" alt="" class="col-md-4" height="200px" width="200px">
 
-        @else
+    @foreach($photos->chunk(3) as $items)
+        <div class="row">
 
-        @endif
-    
+            @foreach($items as $item)
+                <div class="col-md-4">
+                    <img src="{{$item->image}}" alt="Delete me" height="350px" width="350px">
+                </div>
+            @endforeach
+            
+        </div><br><br>
     @endforeach
+
     
     </div>
 </div>

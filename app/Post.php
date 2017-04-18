@@ -2,11 +2,13 @@
 
 namespace App;
 use Storage;
+use Laravel\Scout\Searchable;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Searchable;
     //we want post to be eagerly loaded with user and likes
     public $with = ['user','likes','comments'];
 

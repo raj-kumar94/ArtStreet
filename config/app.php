@@ -181,6 +181,7 @@ return [
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         DevDojo\Chatter\ChatterServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
 
     ],

@@ -52,7 +52,7 @@
                         @endif
                             <li><a href="/forums">Forum</a></li>
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -96,6 +96,7 @@
 
 <br> <br><br>
 
+<search></search>
 
         @yield('content')
         @if(Auth::check())
