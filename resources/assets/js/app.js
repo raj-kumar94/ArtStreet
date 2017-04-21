@@ -18,6 +18,8 @@ Vue.component('post', require('./components/Post.vue'));
 Vue.component('feed', require('./components/Feed.vue'));
 Vue.component('init', require('./components/Init.vue'));
 Vue.component('search', require('./components/Search.vue'));
+Vue.component('test', require('./components/Test.vue'));
+Vue.component('example', require('./components/Example.vue'));
 Vue.component('notification', require('./components/Notification.vue'));
 Vue.component('unread', require('./components/UnreadNotifications.vue'));
 

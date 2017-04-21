@@ -30,16 +30,14 @@
                             </div>
 
                             <div>	
-							<div class="form-group pull-left">
-                                <label for="photo">Upload Your Creation</label>
-                                <input type="file" name="photo" class="form-control" accept="image/*">
-                            </div>
+					
 
-                            
-                            <div class="form-group pull-right" style="margin-top: 25px">
+                               <test></test>
+                            <div class="form-group pull-left" style="margin-left:30px">
                                 <p class="text-center">
                                     <button class="btn btn-success" type="submit">Share With People</button>
                                 </p>
+                                
                             </div>
                             </div>
 

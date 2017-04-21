@@ -12,12 +12,12 @@ class PostsController extends Controller
     {
 
 		$dirName = Auth::user()->slug;    	
-        if($request->hasFile('photo'))
+        if($request->hasFile('image1'))
         {
             Post::create([
             	'user_id' => Auth::id(),
             	'content' => $request['content'],
-              	'image' => $request->photo->store('public/posts/'.$dirName.'')
+              	'image' => $request->image1->store('public/posts/'.$dirName.'')
             ]);
 
             return redirect()->back();

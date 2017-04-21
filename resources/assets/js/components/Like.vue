@@ -14,7 +14,7 @@
                 
                 <li v-for="comment in post.comments">
                     <a :href="comment.user.slug"><img :src="comment.user.avatar" width="20px" height="20px" class="avatar-like"></a>
-                     Hello</li>
+                     </li>
             </ul>
 
     </div>

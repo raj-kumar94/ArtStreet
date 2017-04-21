@@ -133,9 +133,9 @@ Route::group(['middleware'=>'auth'], function(){
 
 Route::group(['middleware'=>'auth'], function(){
 
-    Route::get('/getcomment', [
-            'uses' => 'CommentsController@getcomment',
-            'as' => 'getcomment'
+    Route::get('/postcomment/{id}', [
+            'uses' => 'CommentsController@postcomment',
+            'as' => 'postcomment'
         ]
     );
 

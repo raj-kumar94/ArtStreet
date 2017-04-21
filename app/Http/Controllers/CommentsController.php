@@ -9,15 +9,16 @@ use Auth;
 
 class CommentsController extends Controller
 {
-    public function getcomment(/*$id*/)
+    public function postcomment($id)
     {
-        // $post = Post::find($id);
+         $post = Post::find($id);
 
-        // $comment = Comment::create([
-        //     'user_id' => Auth::id(),
-        //     'post_id' => $post->id
-        // ]);
-        return 'hello';
-        // return Comment::find($comment->id);
+         $comment = Comment::create([
+             'user_id' => Auth::id(),
+             'post_id' => $post->id,
+             'comment' =>'nice'
+         ]);
+         return Comment::find($comment->id);
+        // return 'hello';
     }
 }

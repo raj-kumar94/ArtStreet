@@ -7,7 +7,7 @@
                         <textarea rows="3" class="form-control" v-model="content"></textarea>
                         <br>
                             <button class="btn btn-success pull-right" :disabled="not_working" @click="create_post()">
-                                Create a post
+                                Create a post!
                             </button>
                         </div>
                     </div>

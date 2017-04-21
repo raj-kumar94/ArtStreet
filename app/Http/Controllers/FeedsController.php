@@ -33,7 +33,8 @@ class FeedsController extends Controller
     }
 
     public function photos(){
-        $photos = Post::select('image')->get();
+        $photos = Post::all();
         return view('photos', compact('photos'));
+        // return $photos;
     }
 }

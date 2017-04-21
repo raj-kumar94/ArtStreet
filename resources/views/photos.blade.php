@@ -7,13 +7,23 @@
 
             @foreach($items as $item)
                 <div class="col-md-4">
-                    <img src="{{$item->image}}" alt="Delete me" height="350px" width="350px">
+                    @if(isset($item->user->slug))
+                        <a href="{{route('profile', ['slug'=>$item->user->slug])}}"><img src="{{$item->image}}" alt="Delete me" height="350px" width="350px"></a>
+                    @else   
+                    <a href="#"><img src="{{$item->image}}" alt="Delete me" height="350px" width="350px"></a>
+                    @endif
                 </div>
             @endforeach
             
         </div><br><br>
     @endforeach
-
-    
     </div>
+
+    <h1 id="abc"></h1>
+    <script>
+        $(document).ready( function() {
+             $("#abc").text("more features to come in future!");
+        }
+    </script>
+
 </div>

@@ -21,8 +21,17 @@
                         <br>
                             <like :id="post.id"></like>
                         </div>
-                        <textarea name="" id="" cols="50" rows="3"></textarea>
-                        <button class="btn btn-success" style="margin-bottom:30px">Comment</button>
+                        <textarea name="comment" id="" cols="50" rows="3"></textarea>
+
+                        <div v-for="comments in post.comments">
+                            <li><a :href="getuserprofile(comments.user.slug)"><img :src="comments.user.avatar" width="20px" height="20px" class="avatar-like"></a>
+                            {{comments.comment}} ({{ comments.created_at}})
+                            </li> 
+                        
+                        </div>
+                        
+                        
+                        <button class="btn btn-success" style="margin-bottom:30px" @click="comment(post.id)">Comment</button>
                     </div>
                 </div>
             </div>
@@ -49,6 +58,15 @@
         this.$store.commit('add_post', post)
     })
     })
+    },
+    comment (id) {
+        this.$http.get('/postcomment/'+id)
+        .then( (response) => {
+          console.log(response.body)
+        })
+    },
+    getuserprofile (slug) {
+        return 'http://localhost:8000/profile/'+slug
     }
     },
 
