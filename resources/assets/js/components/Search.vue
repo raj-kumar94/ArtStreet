@@ -7,7 +7,8 @@
 
             <div v-if="results.length">
                 <div class="text-center" v-for="user in results">
-                    <a href=""><p>{{user.name}}</p></a>
+                    <img :src="user.avatar" width="20px" height="20px" class="avatar-like">
+                    <a :href="getuserprofile(user.slug)">{{user.name}}</a>
                     
                 </div>
             </div>
@@ -44,6 +45,9 @@ var index = client.initIndex('users');
                     console.log(this.results)
                 });
                 this.found = true;
+            },
+            getuserprofile (slug) {
+                return 'http://localhost:8000/profile/'+slug
             }
         }
     }

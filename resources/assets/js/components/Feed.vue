@@ -21,15 +21,17 @@
                         <br>
                             <like :id="post.id"></like>
                         </div>
-                        <textarea name="comment" id="" cols="50" rows="3"></textarea>
+                        
 
                         <div v-for="comments in post.comments">
-                            <li><a :href="getuserprofile(comments.user.slug)"><img :src="comments.user.avatar" width="20px" height="20px" class="avatar-like"></a>
+                            <li><a :href="getuserprofile(comments.user.slug)"><img :src="comments.user.avatar" width="20px" height="20px" class="avatar-like">
+                                <b>{{ comments.user.name }} </b>
+                            </a>
                             {{comments.comment}} ({{ comments.created_at}})
                             </li> 
                         
                         </div>
-                        
+                        <textarea name="comment" id="" cols="50" rows="3" style="margin-top:20px;margin-left:20px" v-model="commentdata"></textarea>
                         
                         <button class="btn btn-success" style="margin-bottom:30px" @click="comment(post.id)">Comment</button>
                     </div>
@@ -49,6 +51,11 @@
         components: {
         Like
     },
+        data () {
+            return {
+                commentdata: ''
+            }
+        },
         methods: {
         get_feed() {
         this.$http.get('/feed')

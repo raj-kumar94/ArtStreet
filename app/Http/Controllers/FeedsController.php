@@ -37,4 +37,10 @@ class FeedsController extends Controller
         return view('photos', compact('photos'));
         // return $photos;
     }
+
+    public function guest_photos(){
+        $photos = Post::all();
+        return view('guest_photos', compact('photos'));
+        // return $photos;
+    }
 }

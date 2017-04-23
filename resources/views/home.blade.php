@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-
+<search></search>
     <div class="container">
         <div class="row">
 
 	        <div class="col-sm-2">
-	          <ul id="sidebar" class="nav nav-stacked affix">
-	            <li><a href="{{route('photos')}}">home.blade.php</a></li>
-	            <li><a href="#">Link 2</a></li>
-	            <li><a href="#">Link 3</a></li>
-	            <li><a href="#">Link 4</a></li>
-	            <li><a href="#">In1</a></li>
-	            <li><a href="#">TechMeMe</a></li>
+	          <ul id="sidebar" class="nav nav-pills nav-stacked affix">
+	            <li class="active"><a href="{{route('photos')}}">Discover Arts</a></li>
+	            <li class=""><a href="/messages">Send Messages</a></li>
+	            <li class=""><a href="/pending_requests">See Pending Requests</a></li>
+	            <li class=""><a href="/friends">See Your Friends</a></li>
+	            <li class=""><a href="#">In1</a></li>
+	            <li class=""><a href="#">TechMeMe</a></li>
 	       	  </ul>
 	     	 </div>
 

@@ -55,11 +55,13 @@ Route::get('/accept', function () {
 });
 
 Route::get('/friends', function () {
-    return \App\User::find(1)->friends();
+    //return \App\User::find(Auth::id())->friends();
+    return view('friends', ['friends' => \App\User::find(Auth::id())->friends()]);
 });
 
 Route::get('/pending_requests', function () {
-    return \App\User::find(3)->pending_friend_requests();
+    //return \App\User::find(3)->pending_friend_requests();
+    return view('pending', ['pending' => \App\User::find(Auth::id())->pending_friend_requests() ]);
 });
 
 Route::get('/friends_ids', function () {
@@ -128,6 +130,12 @@ Route::group(['middleware'=>'auth'], function(){
 
 
 });
+
+Route::get('/guest_photos', [
+            'uses' => 'FeedsController@guest_photos',
+            'as' => 'guest_photos'
+        ]
+    );
 
 /////////////comments
 

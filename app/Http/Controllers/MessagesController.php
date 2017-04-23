@@ -138,7 +138,7 @@ class MessagesController extends Controller
 
             if($user_id!=Auth::id())
             {
-                //  User::find($user_id)->notify(new \App\Notifications\NewMessageReceived(Auth::user(),$thread->id));
+                 User::find($user_id)->notify(new \App\Notifications\NewMessageReceived(Auth::user(),$thread->id));
             }
             
 

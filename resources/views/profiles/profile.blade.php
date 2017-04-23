@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="panel panel-default target">
-                <div class="panel-heading" contenteditable="false">Pets I Own</div>
+                <div class="panel-heading" contenteditable="false">some user photos</div>
                 <div class="panel-body">
                   <div class="row">
 				<div class="col-md-4">

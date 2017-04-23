@@ -12,9 +12,7 @@
             <img :src="like.user.avatar" alt="" width="20px" height="20px" class="avatar-like" v-for="like in post.likes">
             <ul>
                 
-                <li v-for="comment in post.comments">
-                    <a :href="comment.user.slug"><img :src="comment.user.avatar" width="20px" height="20px" class="avatar-like"></a>
-                     </li>
+               
             </ul>
 
     </div>

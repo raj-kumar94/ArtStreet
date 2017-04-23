@@ -12,6 +12,12 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <style lang="text/css">
+        body{
+            /*background-image: url({{ URL::to('/') }}/imgs/bg.jpg);*/
+            /*background-color: #b3ffd9;*/
+        }
+    </style>
 
     <!-- Scripts -->
     <script>
@@ -49,8 +55,12 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::check())
                             <li><a href="{{route('profile', ['slug'=>Auth::user()->slug])}}">My Profile</a></li>
-                        @endif
                             <li><a href="/forums">Forum</a></li>
+
+                         @else <li><a href="{{route('guest_photos')}}">Discover Arts</a></li>   
+                        @endif
+                            
+                            
                     </ul>
                     
                     <!-- Right Side Of Navbar -->
@@ -59,8 +69,6 @@
                         @if (Auth::guest())
                             <ul class="nav navbar-nav">
                                 <li><a href="/">Home</a></li>
-
-                                <li><a href="/messages/create">Create New Message</a></li>
                             </ul>
 
                             <li><a href="{{ url('/login') }}">Login</a></li>
@@ -75,6 +83,10 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li class="active"><a href="{{route('photos')}}">Discover Arts</a></li>
+                                    <li class=""><a href="/messages">Send Messages</a></li>
+                                    <li class=""><a href="/pending_requests">See Pending Requests</a></li>
+                                    <li class=""><a href="/friends">See Your Friends</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -96,7 +108,7 @@
 
 <br> <br><br>
 
-<search></search>
+
 
         @yield('content')
         @if(Auth::check())

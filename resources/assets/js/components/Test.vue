@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="col-md-3 pull-left">
+        <div class="col-md-5">
             <div class="form-group">
                 <label>Upload Image</label>
                 <div class="input-group">
