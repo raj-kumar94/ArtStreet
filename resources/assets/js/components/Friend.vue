@@ -16,7 +16,8 @@
             
             <div v-if="status == 'friends'">
                 <span class="text-success">Friends</span><br>
-                <button class="btn btn-success">Send me a message</button>
+                <button class="btn btn-success" @click="testdata">Send me a message</button>
+                <button class="btn btn-primary" @click="testdata">Hire</button>
             </div>    
         
             
@@ -69,6 +70,12 @@ export default {
                     })
                     this.loading = false
                 })
+        },
+        testdata () {
+            axios.post('/posttest',this.status)
+            .then( (r) => {
+                console.log()
+            })
         }
     }
 }

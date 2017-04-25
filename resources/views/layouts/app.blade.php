@@ -124,6 +124,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
     <script>
         @if(Session::has('success'))
             noty({

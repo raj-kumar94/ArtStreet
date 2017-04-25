@@ -30,17 +30,22 @@ class FeedsController extends Controller
         });
 
         return $feed;
+        
     }
 
     public function photos(){
-        $photos = Post::all();
+        $photos = Post::orderBy('created_at', 'desc')->paginate(9);
         return view('photos', compact('photos'));
         // return $photos;
     }
 
     public function guest_photos(){
-        $photos = Post::all();
+        $photos = Post::orderBy('created_at', 'desc')->paginate(9);
         return view('guest_photos', compact('photos'));
         // return $photos;
+    }
+
+    public function similar($slug){
+        return $slug;
     }
 }

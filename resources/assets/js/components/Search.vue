@@ -47,7 +47,7 @@ var index = client.initIndex('users');
                 this.found = true;
             },
             getuserprofile (slug) {
-                return 'http://localhost:8000/profile/'+slug
+                return '/profile/'+slug
             }
         }
     }

@@ -38,10 +38,10 @@
               </li>
             </ul>
            <div class="panel panel-default">
-             <div class="panel-heading">Insured / Bonded?
+             <div class="panel-heading">How much do you love ArtStreet?
 
                 </div>
-                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and bonded.
+                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> ArtStreet as well as Art is my life.
 
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
 
                 </div>
-                <div class="panel-body"><a href="http://bootply.com" class="">bootply.com</a>
+                <div class="panel-body"><a href="http://ArtStreet.com" class="">ArtStreet</a>
 
                 </div>
             </div>
@@ -155,10 +155,10 @@
             <div class="row-fluid">
                 <div class="span3">
                     <p> 
-                        <a href="http://twitter.com/Bootply" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-                        <a href="https://plus.google.com/+Bootply" rel="publisher">Google+</a><br>
-                        <a href="http://facebook.com/Bootply" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-                        <a href="https://github.com/iatek/bootply" title="Bootply on GitHub" target="ext">GitHub</a><br>
+                        <a href="http://twitter.com/ArtStreet" rel="nofollow" title="ArtStreet on Twitter" target="ext">Twitter</a><br>
+                        <a href="https://plus.google.com/+ArtStreet" rel="publisher">Google+</a><br>
+                        <a href="http://facebook.com/ArtStreet" rel="nofollow" title="ArtStreet on Facebook" target="ext">Facebook</a><br>
+                        <a href="https://github.com/iatek/ArtStreet" title="ArtStreet on GitHub" target="ext">GitHub</a><br>
                     </p>
                 </div>
                 

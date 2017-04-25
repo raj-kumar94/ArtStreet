@@ -16,9 +16,13 @@ class CommentsController extends Controller
          $comment = Comment::create([
              'user_id' => Auth::id(),
              'post_id' => $post->id,
-             'comment' =>'nice post'
+             'comment' =>$request->input('c')
          ]);
          return Comment::find($comment->id);
-        // return 'hello';
+        // return $request->input('c');
+    }
+
+    public function posttest(Request $request){
+        return $request;
     }
 }

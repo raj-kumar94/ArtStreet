@@ -141,9 +141,14 @@ Route::get('/guest_photos', [
 
 Route::group(['middleware'=>'auth'], function(){
 
-    Route::get('/postcomment/{id}', [
+    Route::post('/postcomment/{id}', [
             'uses' => 'CommentsController@postcomment',
             'as' => 'postcomment'
+        ]
+    );
+    Route::post('/posttest', [
+            'uses' => 'CommentsController@posttest',
+            'as' => 'posttest'
         ]
     );
 
@@ -187,3 +192,9 @@ Route::group(['middleware'=>'auth'], function(){
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::get('/photos/similar/{slug}',[
+        'uses' => 'FeedsController@similar',
+        'as' => 'similar'
+    ]);

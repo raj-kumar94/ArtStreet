@@ -25,3 +25,6 @@
     </script>
 
 </div>
+<div class="text-center">
+    {{ $photos->links() }}
+</div>  

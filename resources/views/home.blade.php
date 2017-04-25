@@ -33,13 +33,40 @@
 					
 
                                <test></test>
-                            <div class="form-group pull-left" style="margin-left:30px">
+                            <div class="form-group pull-right" style="margin-right:30px">
                                 <p class="text-center">
                                     <button class="btn btn-success" type="submit">Share With People</button>
                                 </p>
                                 
                             </div>
                             </div>
+
+
+                            <!--creating moadal-->
+                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                  more details
+                            </button>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Add more content to your post</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                             <!--<input type="text" class="input form-control" placeholder="type some keywords about this post" name="meta_keywords">-->
+                                        
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!--end modal-->
+
 
 
                         </form>

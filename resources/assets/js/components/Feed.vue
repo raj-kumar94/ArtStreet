@@ -67,13 +67,16 @@
     })
     },
     comment (id) {
-        this.$http.get('/postcomment/'+id)
+        var form = new FormData()
+
+        form.append('c', this.commentdata)
+        axios.post('/postcomment/'+id, form)
         .then( (response) => {
           console.log(response.body)
         })
     },
     getuserprofile (slug) {
-        return 'http://localhost:8000/profile/'+slug
+        return '/profile/'+slug
     }
     },
 
