@@ -55,7 +55,7 @@
                                             <h4 class="modal-title" id="myModalLabel">Add more content to your post</h4>
                                         </div>
                                         <div class="modal-body">
-                                             <!--<input type="text" class="input form-control" placeholder="type some keywords about this post" name="meta_keywords">-->
+                                             <input type="text" class="input form-control" placeholder="type some keywords about this post" name="meta_keywords">
                                         
                                         </div>
                                         <div class="modal-footer">

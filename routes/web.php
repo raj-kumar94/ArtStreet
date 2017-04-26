@@ -198,3 +198,8 @@ Route::get('/photos/similar/{slug}',[
         'uses' => 'FeedsController@similar',
         'as' => 'similar'
     ]);
+
+Route::get('/categories/{slug}',[
+        'uses' => 'FeedsController@categories',
+        'as' => 'categories'
+    ]);    

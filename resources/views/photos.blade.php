@@ -1,8 +1,28 @@
 @extends('layouts.app')
 <br><br><br><br>
 <div class="container">
-<input type="text" class="input form-control" placeholder="search photos"><br><br>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        @foreach($categ as $c)
+            <li><a href="{{route('categories', ['slug' => $c->slug])}}">{{$c->name}}</a></li>
+        @endforeach
+    </ul>
+  </div>
+</nav>
+
+<form action="/photos" method="get">
+    <!--{{csrf_field()}}-->
+    <div class="row">
+        <div class="col-md-10">
+            <input type="text" class="input form-control" placeholder="search photos" name="query"><br><br>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary xs" type="submit">Search</button>
+        </div>
+    </div>
+</form>
 
 
 
@@ -15,7 +35,7 @@
                         <a href="{{route('profile', ['slug'=>$item->user->slug])}}"><img src="{{$item->image}}" alt="Delete me" height="350px" width="350px"></a>
                     
                     <div class="text-center">
-                        <a href="{{route('similar', ['slug'=>'item1 item2'])}}" class="btn btn-primary btn-xs">Similar Photos</a>
+                        <a href="{{route('similar', ['slug'=>$item->id])}}" class="btn btn-primary btn-xs">Similar Photos</a>
                         <a href="{{route('profile', ['slug'=>$item->user->slug])}}" class="btn btn-success btn-xs">Visit User</a>
                     </div>
                     @else   

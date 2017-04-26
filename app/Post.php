@@ -12,7 +12,7 @@ class Post extends Model
     //we want post to be eagerly loaded with user and likes
     public $with = ['user','likes','comments'];
 
-    protected $fillable = ['content','user_id','image'];
+    protected $fillable = ['content','user_id','image','featured','meta_keywords','title','category_id'];
 
     public function user()
     {
