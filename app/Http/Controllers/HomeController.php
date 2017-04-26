@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use TCG\Voyager\Models\Category;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categ = Category::all();
+        // return $categ;
+        return view('home')->with('categ',$categ);
     }
 
     public function notifications()

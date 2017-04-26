@@ -41,7 +41,7 @@
                             </div>
                             </div>
 
-
+                            
                             <!--creating moadal-->
                             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
                                   more details
@@ -56,6 +56,21 @@
                                         </div>
                                         <div class="modal-body">
                                              <input type="text" class="input form-control" placeholder="type some keywords about this post" name="meta_keywords">
+                                             <input type="text" class="input form-control" placeholder="your title goes here" name="title">
+                                             <div class="row">
+                                                <div class="col-md-5 form-group">
+                                                    <select class="form-control">
+                                                    @foreach($categ as $c)
+                                                        <option value="{{$c->id}}">{{$c->name}}</option>
+                                                    @endforeach
+                                                    
+                                                </select>
+                                                </div>
+                                                
+                                                <div class="col-md-5 col-md-offset-2">
+                                                    <input type="text" class="input form-control" placeholder="price if want to sell" name="price">
+                                                </div>
+                                             </div>
                                         
                                         </div>
                                         <div class="modal-footer">

@@ -15,27 +15,27 @@ class PostsController extends Controller
 
         //do like this
         $meta_keywords = '';
-        $price = 1000;
+        $price = 0;
         $category_id = 1;
         $title = '';
         $content = $request['content'];
 
-        // if($request['price']){
-        //     $price=$request['price'];
-        // }
+        if($request['price']){
+            $price=$request['price'];
+        }
         
 
-        // if($request['meta_keywords']){
-        //     $meta_keywords = $request['meta_keywords'];
-        // }
+        if($request['meta_keywords']){
+            $meta_keywords = $request['meta_keywords'];
+        }
 
-        // if($request['category_id']){
-        //     $category_id = $request['category_id'];
-        // }
+        if($request['category_id']){
+            $category_id = $request['category_id'];
+        }
 
-        // if($request['title']){
-        //     $title = $request['title'];
-        // }
+        if($request['title']){
+            $title = $request['title'];
+        }
         
 
         if($request->hasFile('image1'))
