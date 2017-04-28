@@ -46,10 +46,33 @@ class ProfileController extends Controller
         if($request->hasFile('avatar'))
         {
             Auth::user()->update([
-                'avatar' => $request->avatar->store('public/avatars')
+               'avatar' => $request->avatar->store('public/avatars')
             ]);
+            //'avatar' => $request->avatar->store('public/avatars')
+            //'avatar' => $request->file('avatar')->move('storage/avatars','abc.png')
         }
 
+        /*
+                if (Input::hasFile('file')) {
+
+            $file = Input::file("file");
+            $size = $file->getSize();
+
+            $originalName = $file->getClientOriginalName();
+            $fileName = time() . "-" . str_random(5);
+            $extension = $file->getClientOriginalExtension();
+
+            if($file->move(__DIR__ . '/../../../public/uploads/', $fileName . "." . $extension)) {
+            $upload = new Upload();
+            // ...
+            $upload->save();
+
+            $answer = array( 'answer' => 'File transfer completed' );
+            $json = json_encode( $answer );
+
+            echo $json;
+            }
+        */
         Session::flash('success', 'Profile Updated Successfully!');
         return redirect()->back();
     }

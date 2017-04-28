@@ -37,40 +37,37 @@
               <li class="list-group-item text-right"><span class="pull-left"><strong class="">Location: </strong></span> {{$user->profile->location}} 
               </li>
             </ul>
-           <div class="panel panel-default">
-             <div class="panel-heading">How much do you love ArtStreet?
-
-                </div>
-                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> ArtStreet as well as Art is my life.
-
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
-
-                </div>
-                <div class="panel-body"><a href="http://ArtStreet.com" class="">ArtStreet</a>
-
-                </div>
-            </div>
+           
+            
           
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
 
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span> 125</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 13</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Posts</strong></span> 37</li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Followers</strong></span> 78</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span>
+                    @php
+                        $total=0;
+                        foreach($user->posts as $post)
+                         {$total += count($post->likes);}
+                         echo $total;
+                    @endphp
+                 </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Posts</strong></span> {{count($user->posts)}}</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Friends</strong></span> {{count(\App\User::find(Auth::id())->friends())}}</li>
             </ul>
             <div class="panel panel-default">
                 <div class="panel-heading">Social Media</div>
                 <div class="panel-body">	
-                	<i class="glyphicon glyphicon-cloud"></i>  
-                	<i class="fa fa-github fa-2x"></i> 
-                    <i class="fa fa-twitter fa-2x"></i> 
-                    <i class="fa fa-pinterest fa-2x"></i>  
-                    <i class="fa fa-google-plus fa-2x"></i>
+                    
+                    <div class="span3">
+                    <p> 
+                        <a href="http://twitter.com/ArtStreet" rel="nofollow" title="ArtStreet on Twitter" target="ext">Twitter</a><br>
+                        <a href="https://plus.google.com/+ArtStreet" rel="publisher">Google+</a><br>
+                        <a href="http://facebook.com/ArtStreet" rel="nofollow" title="ArtStreet on Facebook" target="ext">Facebook</a><br>
+                        <a href="https://github.com/iatek/ArtStreet" title="ArtStreet on GitHub" target="ext">GitHub</a><br>
+                    </p>
+                </div> 
+
                 </div>
             </div>
         </div>
@@ -83,58 +80,29 @@
                 </div>
             </div>
             <div class="panel panel-default target">
+            
                 <div class="panel-heading" contenteditable="false">some user photos</div>
                 <div class="panel-body">
                   <div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/people">
-						<div class="caption">
-							<h3>
-								Rover
-							</h3>
-							<p>
-								Cocker Spaniel who loves treats.
-							</p>
-							<p>
-							
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/city">
-						<div class="caption">
-							<h3>
-								Marmaduke
-							</h3>
-							<p>
-								Is just another friendly dog.
-							</p>
-							<p>
-							
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/sports">
-						<div class="caption">
-							<h3>
-								Rocky
-							</h3>
-							<p>
-								Loves catnip and naps. Not fond of children.
-							</p>
-							<p>
-							
-							</p>
-						</div>
-                </div>
-                 
-            </div>
+
+                @foreach($user->posts as $post)
+                    @if($loop->iteration==4)
+                    
+                    @php break; @endphp
+
+                    @else
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img alt="300x200" src="{{$post->image}}" height="200px" width="200px">
+                               
+                            </div>
+                        </div>
+                    
+                    @endif
+                @endforeach
+
+				
+				
                      
             </div>
                  
@@ -142,10 +110,7 @@
               
     </div>
            <div class="panel panel-default">
-                <div class="panel-heading">{{$user->name}}</div>
-                <div class="panel-body"> {{$user->profile->about}}
-
-                </div>
+                
 </div></div>
 
 
@@ -154,12 +119,7 @@
         <footer id="footer">
             <div class="row-fluid">
                 <div class="span3">
-                    <p> 
-                        <a href="http://twitter.com/ArtStreet" rel="nofollow" title="ArtStreet on Twitter" target="ext">Twitter</a><br>
-                        <a href="https://plus.google.com/+ArtStreet" rel="publisher">Google+</a><br>
-                        <a href="http://facebook.com/ArtStreet" rel="nofollow" title="ArtStreet on Facebook" target="ext">Facebook</a><br>
-                        <a href="https://github.com/iatek/ArtStreet" title="ArtStreet on GitHub" target="ext">GitHub</a><br>
-                    </p>
+                    
                 </div>
                 
                 

@@ -40,6 +40,7 @@ class PostsController extends Controller
 
         if($request->hasFile('image1'))
         {
+        
             Post::create([
             	'user_id' => Auth::id(),
             	'content' => $content,
@@ -61,5 +62,19 @@ class PostsController extends Controller
 
             return redirect()->back();
         }
+    }
+
+    public function deletepost($id){
+        
+         $post = Post::find($id);
+
+        if(Auth::id()==$post->user_id){
+           
+        $post->likes()->delete();
+        $post->comments()->delete();
+        $post->delete();
+        return 'success';
+        }
+        return 'failed to delete the post';
     }
 }

@@ -127,6 +127,12 @@ Route::group(['middleware'=>'auth'], function(){
         ]
     );
 
+    Route::get('/deletepost/{id}', [
+            'uses' => 'PostsController@deletepost',
+            'as' => 'deletepost'
+        ]
+    );
+
 
 
 });

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
 
-	        <div class="col-sm-2">
+	        <div class="col-sm-2 hidden-xs hidden-sm">
 	          <ul id="sidebar" class="nav nav-pills nav-stacked affix">
 	            <li class="active"><a href="{{route('photos')}}">Discover Arts</a></li>
 	            <li class=""><a href="/messages">Send Messages</a></li>
